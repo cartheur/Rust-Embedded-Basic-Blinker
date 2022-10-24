@@ -1,0 +1,9 @@
+#samd21 is a Cortex-MO and thus thumbv6m
+[build]
+traget = "thumbv6m-none-eabi"
+
+rustflags =
+[
+"-C", "link-arg=--nmagic",
+"-C", "link-arg=-TLink.x",
+]
