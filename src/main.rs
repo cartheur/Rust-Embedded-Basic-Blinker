@@ -16,7 +16,7 @@ atsamd HAL crate
 //import board support crate
 use arduino_nano33iot as bsp;
 //the bsp re-exports the hal
-use bsp::hal;
+use bsp::{hal, Pins};
 //the panic_halt (linked)
 use panic_halt as _;
 
@@ -41,7 +41,7 @@ fn alt_main() -> !
     let mut peripherals:Peripherals = Peripherals::take().unwrap();
 
     //take peripherals from uarch crate (cortex m)
-    let core:Peripherals = CorePeripherals::take::unwrap();
+    let core:CorePeripherals = CorePeripherals::take().unwrap();
 
     //initilaize clock through internal peripherals
     let mut clock = GenericClockController::with_external_32kosc(
@@ -55,7 +55,7 @@ fn alt_main() -> !
     let mut delay = Delay::new(core.SYST, &mut clock);
 
     //setup pins
-    let pins:Pins = bsp::Pins::new(peripherals.PORT);
+    let pins:bsp::Pins = bsp::Pins::new(peripherals.PORT);
     let mut led:Pin<PB10, PushPullOutput> = pins.d2.into();
 
     loop
