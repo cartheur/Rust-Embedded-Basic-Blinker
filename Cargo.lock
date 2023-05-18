@@ -3,7 +3,7 @@
 version = 3
 
 [[package]]
-name = "Rust-Embedded_Sys-LED_Blink"
+name = "Basic-Blinker"
 version = "0.1.0"
 dependencies = [
  "arduino_nano33iot",
