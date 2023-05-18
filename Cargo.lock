@@ -3,14 +3,6 @@
 version = 3
 
 [[package]]
-name = "Basic-Blinker"
-version = "0.1.0"
-dependencies = [
- "arduino_nano33iot",
- "panic-halt",
-]
-
-[[package]]
 name = "arduino_nano33iot"
 version = "0.7.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -69,6 +61,14 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5deb64efa5bd81e31fcd1938615a6d98c82eafcbcd787162b6f63b91d6bac5b3"
 dependencies = [
  "rustc_version",
+]
+
+[[package]]
+name = "basic-blinker"
+version = "0.1.0"
+dependencies = [
+ "arduino_nano33iot",
+ "panic-halt",
 ]
 
 [[package]]

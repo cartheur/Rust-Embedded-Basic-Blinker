@@ -1,4 +1,4 @@
-# Rust-Embedded-Basic-Blinker
+# Basic Blinker for Arduino with Rust Embedded
 
 A project to get started evolving from using *.ino files in the Arduino IDE or the ArduinoUploader C# project into Rust.
 
@@ -16,8 +16,8 @@ rustup component add llvm-tools-preview
 
 ```sh
 cargo build --release
-rust-objcopy -O binary target/thumbv6m-none-eabi/release/aeon-tokens-iot target/aeon-tokens-iot.bin
-arduino-cli upload -i target/aeon-tokens-iot.bin -b arduino:samd:nano_33_iot -p /dev/ttyACM0
+rust-objcopy -O binary target/thumbv6m-none-eabi/release/basic-blinker target/basic-blinker.bin
+arduino-cli upload -i target/basic-blinker.bin -b arduino:samd:nano_33_iot -p /dev/ttyACM0
 ```
 ### Automated build and flash
 
